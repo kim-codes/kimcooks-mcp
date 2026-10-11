@@ -1,0 +1,26 @@
+{
+  "name": "kimcooks-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "my recipe book, but now with an MCP server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kim-codes/kimcooks-mcp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kim-codes/kimcooks-mcp/issues"
+  },
+  "homepage": "https://github.com/kim-codes/kimcooks-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "zod": "^4.6.5"
+  }
+}
