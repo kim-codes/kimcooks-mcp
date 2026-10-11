@@ -1,5 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/server";
 import { serveStdio } from "@modelcontextprotocol/server/stdio";
+import { z } from "zod"; // make to to import zod for input validation
 
 function createServer() {
     const server = new McpServer({
@@ -7,18 +8,20 @@ function createServer() {
         version: "1.0.0"
     });
 
-    // register tool after creating the server and before returning it
     server.registerTool(
         "get_recipe", // tool name 
         {
-            description: "Retrieve a recipe from my recipe book" // config 
+            description: "Retrieve a recipe from my recipe book",
+            inputSchema: { // we want to accept a recipe name as input (string)
+                recipeName: z.string()
+            }
         },
-        async () => { // async is what the tool does 
+        async ({ recipeName }) => {  
             return {
-                content: [ // info returned by the tool
+                content: [
                     {
                         type: "text",
-                        text: "Roasted red pepper soup" // hardcoded for now
+                        text: `Found recipe: ${recipeName}` // return the input
                     }
                 ]
             };
