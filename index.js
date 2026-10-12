@@ -7,7 +7,16 @@ const recipes = {
     "roasted red pepper soup": {
         ingredients: ["red peppers", "garlic", "onion"],
         steps: ["Roast the peppers", "Blend the ingredients"]
+    },
+    "chocolate chip cookies": {
+        ingredients: ["flour", "sugar", "chocolate chips"],
+        steps: ["Mix the ingredients", "Bake in the oven"]
+    },
+    "steak and potatoes": {
+        ingredients: ["steak", "potatoes", "salt", "pepper"],
+        steps: ["Season the steak", "Cook the steak to desired doneness", "Boil or roast the potatoes"]
     }
+
 };
 
 function createServer() {
@@ -16,11 +25,12 @@ function createServer() {
         version: "1.0.0"
     });
 
+    // register tools 
     server.registerTool(
         "get_recipe",
         {
             description: "Retrieve a recipe from my recipe book",
-            inputSchema: z.object({ // update, SDK v2 expects input wrapped in a Zod object schema
+            inputSchema: z.object({ 
                 recipeName: z.string()
             })
         },
@@ -51,6 +61,21 @@ function createServer() {
             }
         }
     );
+
+    server.registerTool("list_recipes", {
+        description: "List all available recipes in KimCooks",
+        inputSchema: {}
+    }, async () => {
+        // Return available recipes
+        return {
+            content: [
+                {
+                    type: "text",
+                    text: "Available recipes:\n" + Object.keys(recipes).join("\n")
+                }
+            ]
+        };
+    });
 
     return server;
 }
