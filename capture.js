@@ -24,14 +24,24 @@ recipe = recipeInput;
 console.log("Sending recipe to Gemini...");
 
 // send the recipe to an LLM 
-// Extract a recipe from the user's notes. Identify the recipe name, ingredients, and steps. Do not invent missing quantities or instructions.
-// Flag important missing details for clarification
 try {
     const response = await ai.models.generateContent({
         model: "gemini-3.5-flash-lite",
         contents: recipeInput,
         config: {
-            systemInstruction: "Extract ingredients and steps from this recipe."
+            systemInstruction: `
+                Extract a recipe from the user's notes.
+
+                Identify:
+                - Recipe name
+                - Ingredients
+                - Steps
+                - Missing information that needs clarification
+
+                Do not invent ingredients, quantities, or instructions.
+                If information is missing or ambiguous, identify what needs clarification.
+                Only ask questions that are necessary to complete the recipe.
+            `
         }
     });
 
@@ -46,10 +56,6 @@ try {
         console.error("Gemini request failed:", error.message);
     }
 }
-
-
-// ask follow up question if anything is missing 
-// accept user input and store it (what if something is still missing)
 
 // ask user if they want to save the recipe 
 const { toSave } = await inquirer.prompt({
