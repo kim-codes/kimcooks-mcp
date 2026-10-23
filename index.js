@@ -63,6 +63,7 @@ function createServer() {
         inputSchema: {}
     }, async () => {
         // Return available recipes
+        console.error("[MCP] list_recipes called");
         return {
             content: [
                 {
@@ -80,4 +81,4 @@ function createServer() {
 const recipes = await loadRecipes();
 
 // call the server 
-serveStdio(createServer());
+serveStdio(createServer);

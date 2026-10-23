@@ -1,14 +1,58 @@
 {
   "roasted red pepper soup": {
-    "ingredients": ["red peppers", "garlic", "onion"],
-    "steps": ["Roast the peppers", "Blend the ingredients"]
+    "ingredients": [
+      "red peppers",
+      "garlic",
+      "onion"
+    ],
+    "steps": [
+      "Roast the peppers",
+      "Blend the ingredients"
+    ]
   },
   "chocolate chip cookies": {
-    "ingredients": ["flour", "sugar", "chocolate chips"],
-    "steps": ["Mix the ingredients", "Bake in the oven"]
+    "ingredients": [
+      "flour",
+      "sugar",
+      "chocolate chips"
+    ],
+    "steps": [
+      "Mix the ingredients",
+      "Bake in the oven"
+    ]
   },
   "steak and potatoes": {
-    "ingredients": ["steak", "potatoes", "salt", "pepper"],
-    "steps": ["Season the steak", "Cook the steak to desired doneness", "Boil or roast the potatoes"]
+    "ingredients": [
+      "steak",
+      "potatoes",
+      "salt",
+      "pepper"
+    ],
+    "steps": [
+      "Season the steak",
+      "Cook the steak to desired doneness",
+      "Boil or roast the potatoes"
+    ]
+  },
+  "caesar salad": {
+    "ingredients": [
+      "1 large head of romaine lettuce",
+      "1/3 cup grated Parmesan cheese",
+      "1 cup croutons",
+      "1/4 cup mayonnaise",
+      "1 tbsp lemon juice",
+      "1 tsp Dijon mustard",
+      "1 garlic clove, minced",
+      "1 tsp Worcestershire sauce (anchovy-free)",
+      "Salt and black pepper to taste"
+    ],
+    "steps": [
+      "Wash, dry, and chop the romaine lettuce.",
+      "In a small bowl, whisk together the mayonnaise, lemon juice, Dijon mustard, garlic, and anchovy-free Worcestershire sauce.",
+      "Season the dressing with salt and black pepper to taste.",
+      "Add the lettuce to a large bowl and toss with the dressing.",
+      "Top with Parmesan cheese and croutons.",
+      "Serve immediately."
+    ]
   }
 }
