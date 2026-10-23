@@ -1,24 +1,18 @@
+// imports 
 import { McpServer } from "@modelcontextprotocol/server";
 import { serveStdio } from "@modelcontextprotocol/server/stdio";
 import { z } from "zod";
+import { readFile } from "node:fs/promises";
 
-// temporarily hardcode recipe collection
-const recipes = {
-    "roasted red pepper soup": {
-        ingredients: ["red peppers", "garlic", "onion"],
-        steps: ["Roast the peppers", "Blend the ingredients"]
-    },
-    "chocolate chip cookies": {
-        ingredients: ["flour", "sugar", "chocolate chips"],
-        steps: ["Mix the ingredients", "Bake in the oven"]
-    },
-    "steak and potatoes": {
-        ingredients: ["steak", "potatoes", "salt", "pepper"],
-        steps: ["Season the steak", "Cook the steak to desired doneness", "Boil or roast the potatoes"]
-    }
+// load,retrieve data (initilization)
+const file = await readFile(
+    new URL("./recipes.json", import.meta.url),
+    "utf8"
+);
 
-};
+const recipes = JSON.parse(file);
 
+// create and configure the server (server definition)
 function createServer() {
     const server = new McpServer({
         name: "kimcooks-mcp",
@@ -81,6 +75,5 @@ function createServer() {
     return server;
 }
 
+// call the server 
 serveStdio(createServer);
-
-console.error("KimCooks MCP server is running!");

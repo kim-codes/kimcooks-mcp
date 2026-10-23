@@ -1,0 +1,14 @@
+{
+  "roasted red pepper soup": {
+    "ingredients": ["red peppers", "garlic", "onion"],
+    "steps": ["Roast the peppers", "Blend the ingredients"]
+  },
+  "chocolate chip cookies": {
+    "ingredients": ["flour", "sugar", "chocolate chips"],
+    "steps": ["Mix the ingredients", "Bake in the oven"]
+  },
+  "steak and potatoes": {
+    "ingredients": ["steak", "potatoes", "salt", "pepper"],
+    "steps": ["Season the steak", "Cook the steak to desired doneness", "Boil or roast the potatoes"]
+  }
+}
