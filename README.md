@@ -14,4 +14,19 @@ ask for a recipe --> get the ingredients and steps --> no digging through pages 
 
 javascript · node js · Model Context Protocol (MCP)
 
-no fancy setup. just meant for learning how MCP works.
+just a little experiment in understanding how MCP works, one recipe at a time
+
+## getting started 
+
+pre-reqs: Node.js, VS Code with GitHub Copilot enabled
+
+1. Clone the repo and open the project in VS Code 
+2. Open a terminal in VS Code (_Terminal → New Terminal_) and run `npm install` to install dependencies 
+3. The `.vscode/mcp.json` file configures VS Code to launch the KimCooks MCP server
+4. To run it, open the Command Palette (`Ctrl + Shift + P`), and select `MCP: List Servers`, and `Start kimcooks`. VS Code will launch the server for you.
+5. Open Copilot Chat in Agent mode (the little chat bubble at the top of VS Code) and ask the following qs one at a time:
+
+    >What recipes do you have?
+    >Can you give me the recipe for chocolate chip cookies?
+    >What can I cook tonight?
+
