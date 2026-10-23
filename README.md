@@ -27,6 +27,8 @@ pre-reqs: Node.js, VS Code with GitHub Copilot enabled
 5. Open Copilot Chat in Agent mode (the little chat bubble at the top of VS Code) and ask the following qs one at a time:
 
     >What recipes do you have?
+    >
     >Can you give me the recipe for chocolate chip cookies?
+    >
     >What can I cook tonight?
 
