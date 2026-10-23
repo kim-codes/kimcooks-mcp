@@ -1,16 +1,17 @@
-// imports 
 import { McpServer } from "@modelcontextprotocol/server";
 import { serveStdio } from "@modelcontextprotocol/server/stdio";
 import { z } from "zod";
 import { readFile } from "node:fs/promises";
 
-// load,retrieve data (initilization)
-const file = await readFile(
-    new URL("./recipes.json", import.meta.url),
-    "utf8"
-);
+// helper function to load,retrieve data
+async function loadRecipes() {
+    const file = await readFile(
+        new URL("./recipes.json", import.meta.url),
+        "utf8"
+    );
 
-const recipes = JSON.parse(file);
+    return JSON.parse(file);
+}
 
 // create and configure the server (server definition)
 function createServer() {
@@ -75,5 +76,8 @@ function createServer() {
     return server;
 }
 
+// load recipe data before starting the server
+const recipes = await loadRecipes();
+
 // call the server 
-serveStdio(createServer);
+serveStdio(createServer());
