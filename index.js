@@ -30,11 +30,12 @@ function createServer() {
         "get_recipe",
         {
             description: "Retrieve a recipe from my recipe book",
-            inputSchema: z.object({ 
+            inputSchema: z.object({
                 recipeName: z.string()
             })
         },
         async ({ recipeName }) => {
+            console.error(`[MCP] get_recipe called with: ${recipeName}`); // add to test if agent is calling the tool
             const normalizedName = recipeName.toLowerCase().trim();
 
             // Check if the recipe exists
@@ -71,7 +72,7 @@ function createServer() {
             content: [
                 {
                     type: "text",
-                    text: "Available recipes:\n" + Object.keys(recipes).join("\n")
+                    text: "Available recipes:\n" + Object.keys(recipes).join("\n") // generating the list from your existing recipes object, rather than maintaining a second hardcoded list
                 }
             ]
         };
