@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/kim-codes/kimcooks-mcp#readme",
   "dependencies": {
+    "@google/genai": "^2.31.0",
     "@modelcontextprotocol/sdk": "^1.32.1",
     "@modelcontextprotocol/server": "^2.3.1",
+    "inquirer": "^14.2.4",
     "zod": "^4.6.5"
   }
 }
